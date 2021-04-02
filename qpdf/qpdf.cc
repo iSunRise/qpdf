@@ -5208,7 +5208,7 @@ static void do_under_overlay_for_page(
         QPDFMatrix cm;
         std::string new_content = dest_page.placeFormXObject(
             fo[from_pageno], name,
-            dest_page.getTrimBox().getArrayAsRectangle(), cm);
+            dest_page.getCropBox().getArrayAsRectangle(), cm);
         dest_page.copyAnnotations(
             from_page, cm, dest_afdh, make_afdh(from_page));
         if (! new_content.empty())
